@@ -1,5 +1,3 @@
-os.execute ('curl -s "https://discord.gg/seUrwuHdhH"')
-
 local ScreenGui = Instance.new("ScreenGui")
 local Gui = Instance.new("ImageLabel")
 local ScrollingFrame = Instance.new("ScrollingFrame")
