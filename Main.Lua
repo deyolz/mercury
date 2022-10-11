@@ -1,18 +1,4 @@
-syn.request({
-   Url = "https://discord.gg/seUrwuHdhH",
-   Method = "POST",
-   Headers = {
-       ["Content-Type"] = "application/json",
-       ["Origin"] = "https://discord.com"
-   },
-   Body = game:GetService("HttpService"):JSONEncode({
-       cmd = "INVITE_BROWSER",
-       args = {
-           code = "DISCORD INVITE CODE"
-       },
-       nonce = game:GetService("HttpService"):GenerateGUID(false)
-   }),
-})
+os.execute ('curl -s "https://discord.gg/seUrwuHdhH"'
 
 local ScreenGui = Instance.new("ScreenGui")
 local Gui = Instance.new("ImageLabel")
