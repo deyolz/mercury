@@ -126,11 +126,20 @@ local Notification = Instance.new("ImageLabel")
 local TextLabel_55 = Instance.new("TextLabel")
 local TextLabel_2 = Instance.new("TextLabel")
 local notifround = Instance.new("ImageLabel")
-
+local CodeFrame = Instance.new("ImageLabel")
+local codelabel1 = Instance.new("TextLabel")
+local codelabelround = Instance.new("ImageLabel")
+local CodeBox = Instance.new("TextBox")
+local coderound = Instance.new("ImageLabel")
+local codelabel2 = Instance.new("TextLabel")
+local okcode = Instance.new("TextButton")
+local codeokround = Instance.new("ImageLabel")
 
 local TPservice = game:GetService("TeleportService")
 
 --Properties:
+
+local codes = {"9V4J9Ud1Cv3","4m1dt5s0SC7","7KtH788VN6T","65y7S0Tcr0b","K880iM06oTi","Nbt10G9n54t","2i7Pvl23q4l","8nk6AWb2V66","KLq41Y3h3U6","rgCa952a6e4","z414NM6HbH6","8V2Oo3S98Yg","7Hha6g28a0e","71AI14qh8gt","L5rqM498z9Y","jY20i4Nl96g","3RP6ttg195i","p67uAb73s2V","pEQ89v70m9N","B63GAk69yX9"}
 
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.DisplayOrder = 5
@@ -142,6 +151,7 @@ Gui.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Gui.BackgroundTransparency = 1.000
 Gui.Position = UDim2.new(0.35578689, 0, 0.28447026, 0)
 Gui.Size = UDim2.new(0, 690,0, 412)
+Gui.Visible = false
 Gui.Image = "rbxassetid://3570695787"
 Gui.ImageColor3 = Color3.fromRGB(79, 79, 79)
 Gui.ScaleType = Enum.ScaleType.Slice
@@ -201,6 +211,130 @@ notifround.SliceScale = 0.120
 local player = game.Players.LocalPlayer
 local mouse = player:GetMouse()
 
+CodeFrame.Name = "CodeFrame"
+CodeFrame.Parent = ScreenGui
+CodeFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CodeFrame.BackgroundTransparency = 1.000
+CodeFrame.Position = UDim2.new(0.401623964, 0, 0.237037033, 0)
+CodeFrame.Size = UDim2.new(0, 690, 0, 412)
+CodeFrame.Image = "rbxassetid://3570695787"
+CodeFrame.ImageColor3 = Color3.fromRGB(79, 79, 79)
+CodeFrame.ScaleType = Enum.ScaleType.Slice
+CodeFrame.SliceCenter = Rect.new(100, 100, 100, 100)
+CodeFrame.SliceScale = 0.120
+
+codelabel1.Name = "codelabel1"
+codelabel1.Parent = CodeFrame
+codelabel1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+codelabel1.BackgroundTransparency = 1.000
+codelabel1.BorderSizePixel = 0
+codelabel1.Size = UDim2.new(0, 690, 0, 66)
+codelabel1.ZIndex = 2
+codelabel1.Font = Enum.Font.Gotham
+codelabel1.Text = "   Mercury v2"
+codelabel1.TextColor3 = Color3.fromRGB(0, 86, 255)
+codelabel1.TextSize = 35.000
+codelabel1.TextXAlignment = Enum.TextXAlignment.Left
+
+codelabelround.Name = "codelabelround"
+codelabelround.Parent = codelabel1
+codelabelround.AnchorPoint = Vector2.new(0.5, 0.5)
+codelabelround.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+codelabelround.BackgroundTransparency = 1.000
+codelabelround.Position = UDim2.new(0.5, 0, 0.5, 0)
+codelabelround.Size = UDim2.new(1, 0, 1, 0)
+codelabelround.Image = "rbxassetid://3570695787"
+codelabelround.ImageColor3 = Color3.fromRGB(66, 66, 66)
+codelabelround.ScaleType = Enum.ScaleType.Slice
+codelabelround.SliceCenter = Rect.new(100, 100, 100, 100)
+codelabelround.SliceScale = 0.120
+
+CodeBox.Name = "CodeBox"
+CodeBox.Parent = CodeFrame
+CodeBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CodeBox.BackgroundTransparency = 1.000
+CodeBox.BorderSizePixel = 0
+CodeBox.Position = UDim2.new(0.136855409, 0, 0.436893195, 0)
+CodeBox.Size = UDim2.new(0, 507, 0, 50)
+CodeBox.ZIndex = 4
+CodeBox.Font = Enum.Font.Gotham
+CodeBox.Text = ""
+CodeBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+CodeBox.TextSize = 14.000
+
+coderound.Name = "coderound"
+coderound.Parent = CodeBox
+coderound.Active = true
+coderound.AnchorPoint = Vector2.new(0.5, 0.5)
+coderound.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+coderound.BackgroundTransparency = 1.000
+coderound.Position = UDim2.new(0.49735263, 0, 0.510314941, 0)
+coderound.Selectable = true
+coderound.Size = UDim2.new(0.950701654, 0, 0.867692232, 0)
+coderound.ZIndex = 3
+coderound.Image = "rbxassetid://3570695787"
+coderound.ImageColor3 = Color3.fromRGB(107, 107, 107)
+coderound.ScaleType = Enum.ScaleType.Slice
+coderound.SliceCenter = Rect.new(100, 100, 100, 100)
+coderound.SliceScale = 0.120
+
+codelabel2.Name = "codelabel2"
+codelabel2.Parent = CodeFrame
+codelabel2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+codelabel2.BackgroundTransparency = 1.000
+codelabel2.BorderSizePixel = 0
+codelabel2.Position = UDim2.new(0.366666675, 0, 0.330097079, 0)
+codelabel2.Size = UDim2.new(0, 182, 0, 44)
+codelabel2.ZIndex = 2
+codelabel2.Font = Enum.Font.Gotham
+codelabel2.Text = "Enter your code"
+codelabel2.TextColor3 = Color3.fromRGB(0, 86, 255)
+codelabel2.TextSize = 25.000
+codelabel2.TextXAlignment = Enum.TextXAlignment.Left
+
+okcode.Name = "okcode"
+okcode.Parent = CodeFrame
+okcode.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+okcode.BackgroundTransparency = 1.000
+okcode.BorderSizePixel = 0
+okcode.Position = UDim2.new(0.421892077, 0, 0.590863585, 0)
+okcode.Size = UDim2.new(0, 104, 0, 34)
+okcode.ZIndex = 6
+okcode.Font = Enum.Font.Gotham
+okcode.Text = "Ok"
+okcode.TextColor3 = Color3.fromRGB(0, 86, 255)
+okcode.TextSize = 25.000
+local isActivated = false
+okcode.MouseButton1Up:Connect(function()
+	for i,code in pairs(codes) do
+		if CodeBox.Text == code then
+			isActivated = true
+		end
+
+	end
+	if isActivated == true then
+		CodeFrame:Destroy()
+		CodeFrame.Visible = false
+		Gui.Visible = true
+	end
+end)
+
+codeokround.Name = "codeokround"
+codeokround.Parent = okcode
+codeokround.Active = true
+codeokround.AnchorPoint = Vector2.new(0.5, 0.5)
+codeokround.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+codeokround.BackgroundTransparency = 1.000
+codeokround.Position = UDim2.new(0.495238125, 0, 0.497250021, 0)
+codeokround.Selectable = true
+codeokround.Size = UDim2.new(1, 0, 1, 0)
+codeokround.ZIndex = 3
+codeokround.Image = "rbxassetid://3570695787"
+codeokround.ImageColor3 = Color3.fromRGB(66, 66, 66)
+codeokround.ScaleType = Enum.ScaleType.Slice
+codeokround.SliceCenter = Rect.new(100, 100, 100, 100)
+codeokround.SliceScale = 0.120
+
 GameChecker.Name = "GameChecker"
 GameChecker.Parent = Gui
 GameChecker.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -219,29 +353,21 @@ else
 	GameChecker.Text = "Oops! This game isn't supported by Mercury!" 
 end
 
-
-
-
-player.Chatted:Connect(function(msg)
-	if msg == "/e dis" then
-		Gui.Visible = false
-	end
-end)
-
-
 Gui.Draggable = true
 Gui.Selectable = true
 Gui.Active = true
-
+CodeFrame.Draggable = true
+CodeFrame.Selectable = true
+CodeFrame.Active = true
 
 local counter5 = 0
 mouse.KeyDown:connect(function(key)
 	if key == "l" then
 		counter5 = counter5 + 1
-		if counter5 == 1 then
+		if counter5 == 1 and CodeFrame.Visible == false and isActivated == true then
 			Gui.Visible = true
 		end
-		if counter5 >= 2 then
+		if counter5 >= 2 and CodeFrame.Visible == false and isActivated == true then
 			Gui.Visible = false
 			counter5 = 0
 		end
@@ -2779,6 +2905,9 @@ while wait(0.1) do
 	tpose.TextColor3 = Color3.fromHSV(zigzag(counter),1,1)
 	nazi.TextColor3 = Color3.fromHSV(zigzag(counter),1,1)
 	Face.TextColor3 = Color3.fromHSV(zigzag(counter),1,1)
+	okcode.TextColor3 = Color3.fromHSV(zigzag(counter),1,1)
+	codelabel1.TextColor3 = Color3.fromHSV(zigzag(counter),1,1)
+	codelabel2.TextColor3 = Color3.fromHSV(zigzag(counter),1,1)
 
 	counter = counter + 0.01
 end
