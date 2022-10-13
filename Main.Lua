@@ -2549,6 +2549,7 @@ Float.MouseButton1Up:Connect(function()
 		local player = game.Players.LocalPlayer
 		local mouse = player:GetMouse()
 		player.Character.Humanoid.HipHeight = 4
+		game.StarterGui:SetCore("SendNotification", {Title="Loaded!"; Text="Succsesfully loaded Float"; Duration=4;})
 		while _G.float do
 			player.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Freefall)
 			wait()
@@ -2557,10 +2558,7 @@ Float.MouseButton1Up:Connect(function()
 	else
 		player.Character.Humanoid.HipHeight = 1
 	end
-	Notification.Visible = true
-	TextLabel_2.Text = "Succesfully loaded Float"
-	wait(3)
-	Notification.Visible = false
+	
 end)
 
 
@@ -2605,10 +2603,7 @@ anim3.MouseButton1Up:Connect(function()
 		hat1.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(0.6,0.4,-0.6)
 		hat2.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(-0.6,0.4,-0.6)
 	end)
-	Notification.Visible = true
-	TextLabel_2.Text = "Succesfully loaded Jiggly Bobas"
-	wait(3)
-	Notification.Visible = false
+	game.StarterGui:SetCore("SendNotification", {Title="Loaded!"; Text="Succsesfully loaded Jiggly Bobas"; Duration=4;})
 end)
 anim3round.Name = "anim3round"
 anim3round.Parent = anim3
@@ -2647,10 +2642,7 @@ BigPP.MouseButton1Up:Connect(function()
 	game:GetService("RunService").Heartbeat:Connect(function()
 		hat.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(0,-1.2,-1.5)
 	end)
-	Notification.Visible = true
-	TextLabel_2.Text = "Succesfully loaded Big PP"
-	wait(3)
-	Notification.Visible = false
+	game.StarterGui:SetCore("SendNotification", {Title="Loaded!"; Text="Succsesfully loaded Big PP"; Duration=4;})
 end)
 
 pp.Name = "pp"
@@ -2695,10 +2687,7 @@ tpose.MouseButton1Up:Connect(function()
 		leftarm.CFrame  = player.Character.HumanoidRootPart.CFrame * CFrame.new(-2,.5,0) * CFrame.Angles(0,0,math.rad(90))
 		rightarm.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(2,.5,0) * CFrame.Angles(0,0,math.rad(-90))
 	end)
-	Notification.Visible = true
-	TextLabel_2.Text = "Succesfully loaded T-Pose"
-	wait(3)
-	Notification.Visible = false
+	game.StarterGui:SetCore("SendNotification", {Title="Loaded!"; Text="Succsesfully loaded T-Pose"; Duration=4;})
 end)
 
 tposeround.Name = "tposeround"
@@ -2739,10 +2728,7 @@ nazi.MouseButton1Up:Connect(function()
 	game:GetService("RunService").Heartbeat:Connect(function()
 		rightarm.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(1.5,1,-0.7) * CFrame.Angles(0,math.rad(75),math.rad(125))
 	end)
-	Notification.Visible = true
-	TextLabel_2.Text = "Succesfully loaded Nazi"
-	wait(3)
-	Notification.Visible = false
+	game.StarterGui:SetCore("SendNotification", {Title="Loaded!"; Text="Succsesfully loaded Nazi"; Duration=4;})
 end)
 
 naziround.Name = "naziround"
@@ -2829,10 +2815,7 @@ Face.MouseButton1Up:Connect(function()
 		end
 
 	end)
-	Notification.Visible = true
-	TextLabel_2.Text = "Succesfully loaded Bruh Face"
-	wait(3)
-	Notification.Visible = false
+	game.StarterGui:SetCore("SendNotification", {Title="Loaded!"; Text="Succsesfully loaded Bruh Face"; Duration=4;})
 end)
 
 Faceround.Name = "Faceround"
