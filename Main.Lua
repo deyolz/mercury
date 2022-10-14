@@ -1290,7 +1290,7 @@ madeby.Name = "madeby"
 madeby.Parent = Gui
 madeby.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 madeby.BackgroundTransparency = 1.000
-madeby.Position = UDim2.new(0.769565225, 0, -0.00255090371, 0)
+madeby.Position = UDim2.new(0.77, 0,0.937, 0)
 madeby.Size = UDim2.new(0, 159, 0, 26)
 madeby.Font = Enum.Font.Gotham
 madeby.Text = "Made by deyol#6075"
@@ -2558,7 +2558,7 @@ Float.MouseButton1Up:Connect(function()
 	else
 		player.Character.Humanoid.HipHeight = 1
 	end
-	
+
 end)
 
 
@@ -2833,6 +2833,41 @@ Faceround.ImageColor3 = Color3.fromRGB(66, 66, 66)
 Faceround.ScaleType = Enum.ScaleType.Slice
 Faceround.SliceCenter = Rect.new(100, 100, 100, 100)
 Faceround.SliceScale = 0.120
+
+local X = Instance.new("TextButton")
+local xround = Instance.new("ImageLabel")
+
+X.Name = "X"
+X.Parent = Gui
+X.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+X.BackgroundTransparency = 1.000
+X.BorderSizePixel = 0
+X.Position = UDim2.new(0.910869479, 0, 0.0165880807, 0)
+X.Size = UDim2.new(0, 51, 0, 49)
+X.ZIndex = 2
+X.Font = Enum.Font.Gotham
+X.Text = "X"
+X.TextColor3 = Color3.fromRGB(255, 255, 255)
+X.TextSize = 15.000
+X.MouseButton1Up:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {Title="GoodBye"; Text="See you next time!"; Duration=4;})
+	ScreenGui:Destroy()
+end)
+
+xround.Name = "xround"
+xround.Parent = X
+xround.Active = true
+xround.AnchorPoint = Vector2.new(0.5, 0.5)
+xround.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+xround.BackgroundTransparency = 1.000
+xround.Position = UDim2.new(0.495238125, 0, 0.497250021, 0)
+xround.Selectable = true
+xround.Size = UDim2.new(1, 0, 1, 0)
+xround.Image = "rbxassetid://3570695787"
+xround.ImageColor3 = Color3.fromRGB(188, 0, 3)
+xround.ScaleType = Enum.ScaleType.Slice
+xround.SliceCenter = Rect.new(100, 100, 100, 100)
+xround.SliceScale = 0.120
 
 function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
 
