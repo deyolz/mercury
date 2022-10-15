@@ -2544,20 +2544,35 @@ Float.TextColor3 = Color3.fromRGB(81, 0, 255)
 Float.TextSize = 25.000
 _G.float = false
 Float.MouseButton1Up:Connect(function()
-	_G.float = not _G.float
-	if _G.float then
-		local player = game.Players.LocalPlayer
-		local mouse = player:GetMouse()
-		player.Character.Humanoid.HipHeight = 4
-		game.StarterGui:SetCore("SendNotification", {Title="Loaded!"; Text="Succsesfully loaded Float"; Duration=4;})
-		while _G.float do
-			player.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Freefall)
-			wait()
-		end
+	local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+player.Character.Humanoid.HipHeight = 4
+player.Character.Torso["Left Hip"]:Destroy()
+player.Character.Torso["Right Hip"]:Destroy()
+player.Character.Torso["Left Shoulder"]:Destroy()
+player.Character.Torso["Right Shoulder"]:Destroy()
 
-	else
-		player.Character.Humanoid.HipHeight = 1
+local loop = game:GetService("RunService").Heartbeat:Connect(function ()
+	player.Character["Left Leg"].CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(0.5,-1.6,0.5) * CFrame.Angles(math.rad(-35),0,0)
+	player.Character["Right Leg"].CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(-0.5,-1.6,0.5) * CFrame.Angles(math.rad(-35),0,0)
+	player.Character["Left Arm"].CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(2,0.4,0) * CFrame.Angles(0,0,math.rad(45))
+	player.Character["Right Arm"].CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(-2,0.4,0) * CFrame.Angles(0,0,math.rad(-45))
+end)
+game.StarterGui:SetCore("SendNotification", {Title="Loaded!"; Text="Succsesfully loaded Float"; Duration=4;})
+
+game.Players.LocalPlayer.PlayerAdded:Connect(function(Player)
+    Player.CharacterAdded:Connect(function(Char)
+        loop:Disconnect()
+		print("Disconnected!")
+    end)
+end)
+
+mouse.KeyDown:Connect(function (key)
+	if key == "k" then
+		loop:Disconnect()
+		print("Disconnected!")
 	end
+end)
 
 end)
 
