@@ -2650,13 +2650,24 @@ BigPP.TextColor3 = Color3.fromRGB(81, 0, 255)
 BigPP.TextSize = 25.000
 BigPP.MouseButton1Up:Connect(function()
 	local player = game.Players.LocalPlayer
-	local mouse  = player:GetMouse()
-	local hat    = player.Character["Pal Hair"].Handle
-	hat.AccessoryWeld:Destroy()
+local hat1 = player.Character["BoySpaceHair"].Handle
+local hat2 = player.Character["rol_icebrainAccessory"].Handle
+local hat3 = player.Character["Robloxclassicred"].Handle
+local hat4 = player.Character["Pal Hair"].Handle
+
+local hats = {hat1,hat3,hat4}
+for i,hat in pairs(hats) do
 	hat.Mesh:Destroy()
-	game:GetService("RunService").Heartbeat:Connect(function()
-		hat.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(0,-1.2,-1.5)
-	end)
+	hat.AccessoryWeld:Destroy()
+end
+hat2.SpecialMesh:Destroy()
+hat2.AccessoryWeld:Destroy()
+game:GetService("RunService").Heartbeat:Connect(function()
+	hat4.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(0,-1.2,-1.5)
+	hat3.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(0,-1.2,-3)
+	hat2.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(0.6,-1.8,-1)
+	hat1.CFrame = player.Character.HumanoidRootPart.CFrame * CFrame.new(-0.6,-1.8,-1)
+end)
 	game.StarterGui:SetCore("SendNotification", {Title="Loaded!"; Text="Succsesfully loaded Big PP"; Duration=4;})
 end)
 
