@@ -1,7 +1,4 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
+-- how did u find this
 
 local ScreenGui = Instance.new("ScreenGui")
 local Gui = Instance.new("Frame")
@@ -913,9 +910,6 @@ local function VBSANLE_fake_script() -- TextButton_11.LocalScript
 		player.Character.Humanoid.Running:Connect(function(speed)
 			player.Character.Humanoid.WalkSpeed = speed + 1.5
 			wait(0.5)
-			if player.Character.Humanoid.MoveDirection.Magnitude <= 0 then
-				player.Character.Humanoid.WalkSpeed = speed - 1.5
-			end
 			if player.Character.Humanoid.WalkSpeed >= 50 then
 				player.Character.Humanoid.WalkSpeed = 50
 			end
